@@ -107,7 +107,7 @@ pcp <- ggplot(gene2path, aes(pathway, gene))  +
     geom_point(size=5, shape=22, fill = "steelblue") +
     theme_minimal() + 
     theme_noyaxis() +
-    theme(axis.text.x = element_text(angle=30, hjust=1)) + 
+    theme(axis.text.x = element_text(angle=30, hjust=1, size=7.8)) + 
     xlab(NULL) +
     ylab(NULL)
 
@@ -123,7 +123,7 @@ gg
 ```{r all, fig.width=16, fig.height=14}
 pp <- plot_list(cell_tree, p_cell_type, heights=c(1, .5))
 pp <- plot_list(gene_tree, pp, widths=c(.3, 1))
-pp <- plot_list(p, pp, p_ppi, pcp, widths=c(1, .8, .05, .6))
+pp <- plot_list(p, pp, p_ppi, pcp, widths=c(1, .8, .05, .8))
 pp <- pp + patchwork::plot_annotation(tag_levels='1')
 
 final_plot <- plot_list(pp, gg, ncol=1, tag_levels='A', heights=c(1, 1.2))
